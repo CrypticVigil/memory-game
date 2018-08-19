@@ -37,8 +37,8 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-function success() {
-    console.log('success');
+function flip() {
+    event.target.classList.toggle('flip');
 }
 
-document.getElementById('board').addEventListener('click', success);
+document.getElementsByClassName('board')[0].addEventListener('click', flip);

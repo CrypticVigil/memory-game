@@ -42,12 +42,12 @@ h1 {
     font-size: 18px;
 }
 
-#board {
+.board {
     width: 640px;
     height: 640px;
     padding: 15px;
     background-image: linear-gradient(-45deg, #9575CD, #26C6DA);
-    border-radius: 10px;
+    border-radius: 16px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -65,19 +65,21 @@ h1 {
     align-items: center;
     border-radius: 8px;
     margin: 15px;
+    transition: all 300ms;
 }
 
-.flipped {
-    transform: rotateY(0);
-    background: #02b3e4;
+.card.flip {
+    transform: rotateY(180deg);
+    background-color: #80DEEA;
     cursor: default;
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 /*
  * Styles for the deck of cards
  */
 
-.deck {
+/* .deck {
     width: 660px;
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
@@ -119,13 +121,13 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
-}
+} */
 
 /*
  * Styles for the Score Panel
  */
 
-.score-panel {
+/* .score-panel {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
@@ -146,4 +148,4 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
-}
+} */
