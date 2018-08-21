@@ -40,6 +40,11 @@ h1 {
     margin: 0 20px;
     line-height: 40px;
     font-size: 18px;
+    display: inline;
+}
+
+header p {
+    display: inline;
 }
 
 .board {

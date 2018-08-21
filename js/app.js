@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-
+let startTime = Date.now();
 let deck = [];
 let moveCount = 0;
 
@@ -62,18 +62,32 @@ function flip() {
         if (openCards[0].innerHTML === openCards[1].innerHTML) {
             openCards[0].classList.add('match');
             openCards[1].classList.add('match');
+            moveCount++;
+            document.getElementById('counter').innerHTML = moveCount;
             openCards = [];
+            winCheck();
         } else {
             setTimeout( function() {
                 openCards[0].classList.toggle('flip');
                 openCards[1].classList.toggle('flip');
+                moveCount++;
+                document.getElementById('counter').innerHTML = moveCount;
                 openCards = [];
             }, 1200);
         }
     }
-    moveCount++;
-    document.getElementById('counter').innerHTML = moveCount;
+    
 }
+
+function winCheck() {
+    if (document.getElementsByClassName('match').length === 16) {
+        let totalTime = Date.now() - startTime;
+        console.log(totalTime / 1000 + " seconds");
+        console.log('WINNER!');
+    };
+}
+
+
 
 document.getElementsByClassName('board')[0].addEventListener('click', flip);
 
