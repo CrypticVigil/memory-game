@@ -2,6 +2,19 @@
  * Create a list that holds all of your cards
  */
 
+let deck = [];
+let moveCount = 0;
+
+function start() {
+    let cardList = document.getElementsByClassName('card');
+    for (let i = 0; i < cardList.length; i++) {
+        deck.push(cardList[i].innerHTML);
+    }
+    shuffle(deck);
+    for (let j = 0; j < cardList.length; j++) {
+        document.getElementsByClassName('card')[j].innerHTML = deck[j];
+    }
+}
 
 /*
  * Display the cards on the page
@@ -37,8 +50,31 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+let openCards = [];
+
 function flip() {
-    event.target.classList.toggle('flip');
+    if (openCards.length == 0 && !event.target.classList.contains('match')) {
+        event.target.classList.toggle('flip');
+        openCards.push(event.target);
+    } else if (openCards.length == 1 && !event.target.classList.contains('match')) {
+        event.target.classList.toggle('flip');
+        openCards.push(event.target);
+        if (openCards[0].innerHTML === openCards[1].innerHTML) {
+            openCards[0].classList.add('match');
+            openCards[1].classList.add('match');
+            openCards = [];
+        } else {
+            setTimeout( function() {
+                openCards[0].classList.toggle('flip');
+                openCards[1].classList.toggle('flip');
+                openCards = [];
+            }, 1200);
+        }
+    }
+    moveCount++;
+    document.getElementById('counter').innerHTML = moveCount;
 }
 
 document.getElementsByClassName('board')[0].addEventListener('click', flip);
+
+start();
