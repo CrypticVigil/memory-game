@@ -53,30 +53,35 @@ function shuffle(array) {
 let openCards = [];
 
 function flip() {
-    if (openCards.length == 0 && !event.target.classList.contains('match')) {
-        event.target.classList.toggle('flip');
-        openCards.push(event.target);
-    } else if (openCards.length == 1 && !event.target.classList.contains('match')) {
-        event.target.classList.toggle('flip');
-        openCards.push(event.target);
-        if (openCards[0].innerHTML === openCards[1].innerHTML) {
-            openCards[0].classList.add('match');
-            openCards[1].classList.add('match');
-            moveCount++;
-            document.getElementById('counter').innerHTML = moveCount;
-            openCards = [];
-            winCheck();
-        } else {
-            setTimeout( function() {
-                openCards[0].classList.toggle('flip');
-                openCards[1].classList.toggle('flip');
+    if (openCards.length == 0
+        && !event.target.classList.contains('match')
+        && !event.target.classList.contains('board')) {
+            event.target.classList.toggle('flip');
+            openCards.push(event.target);
+    } else if (openCards.length == 1
+        && !event.target.classList.contains('match')
+        && !event.target.classList.contains('board')) {
+            event.target.classList.toggle('flip');
+            openCards.push(event.target);
+            if (openCards[0].innerHTML === openCards[1].innerHTML) {
+                openCards[0].classList.add('match');
+                openCards[1].classList.add('match');
                 moveCount++;
                 document.getElementById('counter').innerHTML = moveCount;
                 openCards = [];
-            }, 1200);
-        }
+                stars();
+                winCheck();
+            } else {
+                setTimeout( function() {
+                    openCards[0].classList.toggle('flip');
+                    openCards[1].classList.toggle('flip');
+                    moveCount++;
+                    document.getElementById('counter').innerHTML = moveCount;
+                    openCards = [];
+                    stars();
+                }, 1200);
+            }
     }
-    
 }
 
 function winCheck() {
@@ -87,7 +92,15 @@ function winCheck() {
     };
 }
 
-
+function stars() {
+    if (moveCount == 14) {
+        document.getElementById('stars').innerHTML = '&#9733; &nbsp; &#9733; &nbsp; &#9734;';
+    } else if (moveCount == 21) {
+        document.getElementById('stars').innerHTML = '&#9733; &nbsp; &#9734; &nbsp; &#9734;';
+    } else if (moveCount == 28) {
+        document.getElementById('stars').innerHTML = '&#9734; &nbsp; &#9734; &nbsp; &#9734;';
+    }
+}
 
 document.getElementsByClassName('board')[0].addEventListener('click', flip);
 
