@@ -88,6 +88,24 @@ header p {
     background-color: white;
 }
 
+.win-modal {
+    position: absolute;
+    width: 320px;
+    height: 180px;
+    padding: 20px;
+    background-color: white;
+    display: none;
+}
+
+.win-modal p {
+    margin: 0;
+}
+
+.win-modal button {
+    margin: 40px 0 0 0;
+    width: 280px;
+    height: 40px;
+}
 /*
  * Styles for the deck of cards
  */

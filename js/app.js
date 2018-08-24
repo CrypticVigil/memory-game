@@ -1,11 +1,10 @@
-/*
- * Create a list that holds all of your cards
- */
-let startTime = Date.now();
-let deck = [];
 let moveCount = 0;
+let startTime;
+let modal = document.getElementsByClassName('win-modal')[0];
 
+// function that sets up the cards for the beginning of the game
 function start() {
+    let deck = [];
     let cardList = document.getElementsByClassName('card');
     for (let i = 0; i < cardList.length; i++) {
         deck.push(cardList[i].innerHTML);
@@ -14,14 +13,9 @@ function start() {
     for (let j = 0; j < cardList.length; j++) {
         document.getElementsByClassName('card')[j].innerHTML = deck[j];
     }
+    moveCount = 0;
+    startTime = Date.now();
 }
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -37,7 +31,6 @@ function shuffle(array) {
 
     return array;
 }
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -87,8 +80,9 @@ function flip() {
 function winCheck() {
     if (document.getElementsByClassName('match').length === 16) {
         let totalTime = Date.now() - startTime;
-        console.log(totalTime / 1000 + " seconds");
-        console.log('WINNER!');
+        document.getElementById('seconds').innerHTML = Math.round(totalTime / 1000);
+        document.getElementById('moves').innerHTML = moveCount;
+        modal.style.display = "block";
     };
 }
 
@@ -103,5 +97,14 @@ function stars() {
 }
 
 document.getElementsByClassName('board')[0].addEventListener('click', flip);
+document.getElementById('restart').addEventListener('click', function() {
+    modal.style.display = 'none';
+    let matches = document.getElementsByClassName('card');
+    for (let i = 0; i < matches.length; i++) {
+        matches[i].classList.remove('match');
+        matches[i].classList.remove('flip');
+    }
+    start();
+});
 
 start();
