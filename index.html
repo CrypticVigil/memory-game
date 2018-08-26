@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Memory Match</title>
     <meta name="description" content="A game of matching tiles.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
@@ -14,6 +15,11 @@
         <h1>Memory Match</h1>
         <p>//&emsp;<span id='counter'>0</span> Moves</p>
         <p>&emsp;//&emsp;<span id='stars'>&#9733; &nbsp; &#9733; &nbsp; &#9733;</span></p>
+        <div class="rightNav">
+            <span id='timer'>0:00</span>
+            <button id='restart'>Restart</button>
+        </div>
+        
     </header>
 
     <div class="container">
@@ -39,7 +45,8 @@
 
         <div class='win-modal'>
             <p>Congratulations! You completed the game in <span id='seconds'>0</span> seconds using a total of <span id='moves'>0</span> moves.</p>
-            <button id='restart'>Play Again</button>
+            <p id='starScore'>&#9733; &nbsp; &#9733; &nbsp; &#9733;</p>
+            <button id='play-again'>Play Again</button>
         </div>
 
     </div>

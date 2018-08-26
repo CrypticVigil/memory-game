@@ -47,6 +47,20 @@ header p {
     display: inline;
 }
 
+.rightNav {
+    float: right;
+}
+
+#timer {
+    line-height: 40px;
+}
+
+#restart {
+    margin: 8px 20px;
+    width: 100px;
+    height: 24px;
+}
+
 .board {
     width: 640px;
     height: 640px;
@@ -104,9 +118,14 @@ header p {
 }
 
 .win-modal button {
-    margin: 40px 0 0 0;
+    margin: 0;
     width: 280px;
     height: 40px;
+}
+
+#starScore {
+    margin: 10px 0;
+    text-align: center;
 }
 
 /* styles for smaller screens */

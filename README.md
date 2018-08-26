@@ -7,7 +7,7 @@
 
 ## Dependencies
 
-None. I have a link to the Font Awesome icon set. Everything else is basic HTML, CSS, and JavaScript.
+None. I have a link to the Font Awesome icon set. Everything else is basic HTML, CSS, and JavaScript. No Bootstrap used.
 
 ## Instructions
 
