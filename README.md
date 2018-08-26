@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
+* [Dependencies](#dependencies)
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+
+## Dependencies
+
+None. I have a link to the Font Awesome icon set. Everything else is basic HTML, CSS, and JavaScript.
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Simply click pairs of cards to see if you can find a match. Once you've matched them all, a pop-up will let you know how quickly you won and how many moves it took.
