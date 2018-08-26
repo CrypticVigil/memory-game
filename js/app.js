@@ -89,9 +89,9 @@ function winCheck() {
 function stars() {
     if (moveCount == 14) {
         document.getElementById('stars').innerHTML = '&#9733; &nbsp; &#9733; &nbsp; &#9734;';
-    } else if (moveCount == 21) {
+    } else if (moveCount == 18) {
         document.getElementById('stars').innerHTML = '&#9733; &nbsp; &#9734; &nbsp; &#9734;';
-    } else if (moveCount == 28) {
+    } else if (moveCount == 22) {
         document.getElementById('stars').innerHTML = '&#9734; &nbsp; &#9734; &nbsp; &#9734;';
     }
 }
@@ -104,7 +104,9 @@ document.getElementById('restart').addEventListener('click', function() {
         matches[i].classList.remove('match');
         matches[i].classList.remove('flip');
     }
+    document.getElementById('stars').innerHTML = '&#9733; &nbsp; &#9733; &nbsp; &#9733;';
     start();
+    document.getElementById('counter').innerHTML = moveCount;
 });
 
 start();

@@ -95,6 +95,8 @@ header p {
     padding: 20px;
     background-color: white;
     display: none;
+    border-radius: 8px;
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .win-modal p {
@@ -106,77 +108,16 @@ header p {
     width: 280px;
     height: 40px;
 }
-/*
- * Styles for the deck of cards
- */
 
-/* .deck {
-    width: 660px;
-    min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 3em;
+/* styles for smaller screens */
+@media only screen and (max-height: 700px) {
+    .board {
+        width: 560px;
+        height: 560px;
+    }
+    
+    .card {
+        width: 102.5px;
+        height: 102.5px;
+    }
 }
-
-.deck .card {
-    height: 125px;
-    width: 125px;
-    background: #2e3d49;
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-}
-
-.deck .card.open {
-    transform: rotateY(0);
-    background: #02b3e4;
-    cursor: default;
-}
-
-.deck .card.show {
-    font-size: 33px;
-}
-
-.deck .card.match {
-    cursor: default;
-    background: #02ccba;
-    font-size: 33px;
-} */
-
-/*
- * Styles for the Score Panel
- */
-
-/* .score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
-}
-
-.score-panel .stars {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    margin: 0 5px 0 0;
-}
-
-.score-panel .stars li {
-    list-style: none;
-    display: inline-block;
-}
-
-.score-panel .restart {
-    float: right;
-    cursor: pointer;
-} */
