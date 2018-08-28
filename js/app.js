@@ -2,6 +2,7 @@
 
 let moveCount = 0;
 let time;
+let openCards = [];
 let modal = document.getElementsByClassName('win-modal')[0];
 
 // function that sets up the cards for the beginning of the game
@@ -17,6 +18,7 @@ function start() {
     }
     moveCount = 0;
     time = 0;
+    openCards = [];
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -33,8 +35,6 @@ function shuffle(array) {
 
     return array;
 }
-
-let openCards = [];
 
 // this function controls what happens when a card is clicked
 function flip() {
